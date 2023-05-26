@@ -3,15 +3,17 @@ pipeline {
   stages {
     stage('step1') {
       parallel {
-        stage('step1') {
+        stage('stage1') {
           steps {
-            echo 'hello step1'
+            sh 'echo env'
+            echo 'stage1  step2'
           }
         }
 
-        stage('step2') {
+        stage('stage2') {
           steps {
-            echo 'step2'
+            echo 'stage2 step1'
+            echo 'stage2 step2'
           }
         }
 
